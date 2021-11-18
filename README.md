@@ -1,5 +1,5 @@
 # Wiki.JS
-Implementação do Sistema de documentação Wiki.JS
+Implementação do Sistema de documentação Wiki.JS no UBUNTU Server
 
 ## Requisitos 
 1 Servidor para Banco de dados <br>
