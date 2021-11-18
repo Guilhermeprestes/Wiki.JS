@@ -26,3 +26,20 @@ sudo apt install nodejs
 sudo apt install npm
 nodejs -v
 ```
+## Instalar a Wiki.JS
+
+Baixe a versão mais recente do Wiki.js:
+
+```bash
+  wget https://github.com/Requarks/wiki/releases/download/2.5.219/wiki-js.tar.gz
+  ```
+  
+ Extraia o pacote para o destino final de sua escolha:
+ 
+ ```bash
+ mkdir wiki
+tar xzf wiki-js.tar.gz -C ./wiki
+cd ./wiki
+ ```
+  ```bash
+ ```
