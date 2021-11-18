@@ -14,8 +14,8 @@ usuário e uma senha, com permissão para acessar seu próprio banco:
 
 ```bash MySQL
 mysql> create database wiki character set utf8 collate utf8_bin;
-mysql> create user wiki@IP_SERVER-WIKI identified by 'wikipw';
-mysql> grant all privileges on wiki.* to wiki@IP_SERVER-WIKI;
+mysql> create user wikijs@IP_SERVER-WIKI identified by 'wikipw';
+mysql> grant all privileges on wiki.* to wikijs@IP_SERVER-WIKI;
 mysql> quit;
 ```
 
@@ -41,5 +41,25 @@ Baixe a versão mais recente do Wiki.js:
 tar xzf wiki-js.tar.gz -C ./wiki
 cd ./wiki
  ```
+ Renomeie o arquivo de configuração de amostra para config.yml:
+ 
   ```bash
+  mv config.sample.yml config.yml
  ```
+ Edite o arquivo de configuração e preencha seu banco de dados e configurações de porta:
+ 
+  ```bash
+vim config.yml 
+```
+> db: <br>
+  type: mysql <br>
+  host: localhost <br>
+  port: 3306 <br>
+  user: wikijs <br>
+  pass: wikipw <br>
+  db: wiki <br>
+  
+  
+
+
+ 
