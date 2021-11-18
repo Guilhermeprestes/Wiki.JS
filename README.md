@@ -22,7 +22,8 @@ mysql> quit;
 ## Instalar o Node.JS
 
 ```bash MySQL
-sudo apt install nodejs
+curl -fsSL https://deb.nodesource.com/setup_16.x | sudo -E bash -
+sudo apt-get install -y nodejs
 sudo apt install npm
 nodejs -v
 ```
@@ -59,7 +60,65 @@ vim config.yml
   pass: wikipw <br>
   db: wiki <br>
   
-  
+ Execute Wiki.js
+ 
+  ```bash
+node server
+```
+Espere até ser convidado para abrir a página de configuração no seu navegador.
+Conclua o assistente de configuração para finalizar a instalação.
+
+## Executar como serviço
+
+Crie um novo arquivo chamado wiki.servicedentro do diretório /etc/systemd/system
+
+  ```bash
+vim /etc/systemd/system/wiki.service
+```
+Cole o seguinte conteúdo (presumindo que seu wiki esteja instalado em /var/wiki):
+
+  ```bash
+[Unit]
+Description=Wiki.js
+After=network.target
+
+[Service]
+Type=simple
+ExecStart=/usr/bin/node server
+Restart=always
+
+User=root
+Environment=NODE_ENV=production
+WorkingDirectory=/var/wiki
+
+[Install]
+WantedBy=multi-user.target
+```
+Salve o arquivo de serviço 
+
+Recarregue o systemd:
+
+  ```bash
+ systemctl daemon-reload
+```
+Execute o serviço:
+
+  ```bash
+systemctl start wiki
+```
+
+Habilite o serviço na inicialização do sistema.
+
+  ```bash
+ systemctl enable wiki
+```
+
+
+
+
+
+
+
 
 
  
