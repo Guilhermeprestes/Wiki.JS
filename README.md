@@ -3,6 +3,8 @@ Implementação do Sistema de documentação Wiki.JS no UBUNTU Server
 
 https://js.wiki/
 
+![Imagem_exemplo](https://js.wiki/img/wiki-screenshot.3d2d7f34.png)
+
 ## Requisitos 
 1 Servidor para Banco de dados <br>
 1 Servidor para Wiki.JS
